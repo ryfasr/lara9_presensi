@@ -13,7 +13,7 @@
           <img src="{{ asset('adminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Ryfa</a>
+          <a href="#" class="d-block">Ryfa </a>
         </div>
       </div>
 
@@ -34,6 +34,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+          @if (auth()->user()->level=="karyawan")
           <li class="nav-item ">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i> 
@@ -57,7 +58,7 @@
               </li>
             </ul>
           </li>
-
+          @endif
           <li class="nav-item ">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-edit alt"></i>
@@ -67,21 +68,30 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              @if (auth()->user()->level=="karyawan")
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="far fa-user nav-icon"></i>
                   <p>Presensi Per Karyawan</p>
                 </a>
               </li>
+              @endif
+              @if (auth()->user()->level=="admin")
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="fas fa-duotone fa-users nav-icon"></i>
                   <p>Presensi Keseluruhan</p>
                 </a>
               </li>
+              @endif
             </ul>
           </li>
-          
+          <li class="nav-item">
+            <a href="{{ route('logout') }}" class="nav-link">
+              <i class="fas fa-user nav-icon"></i>
+              <p>Logout</p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
