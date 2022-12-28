@@ -55,7 +55,8 @@
         </div>
       </form>
 
-      
+      <a href="{{ route('registrasi') }}" class="text-center">You don't have an account, <br> 
+        please register</a>
     </div>
     <!-- /.login-card-body -->
   </div>
