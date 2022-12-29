@@ -51,7 +51,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('keluar') }}" class="nav-link">
                   <i class="far fa-solid fa-thumbs-down nav-icon"></i> 
                   <p>Presensi Keluar</p>
                 </a>
