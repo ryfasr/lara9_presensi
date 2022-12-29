@@ -86,6 +86,16 @@ class PresensiController extends Controller
             dd("sudah ada");
         }
     }
+    public function tampildatakeseluruhan($tglawal, $tglakhir)
+    {
+        $presensi = Presensi::with('user')->whereBetween('tgl', [$tglawal, $tglakhir])->orderBy('tgl', 'asc')->get();
+        return view('presensi.rekap-karyawan', compact('presensi'));
+    }
+    public function halamanrekap()
+    {
+        return view('presensi.Halaman-rekap-karyawan');
+    }
+
     /**
      * Display the specified resource.
      *
