@@ -45,7 +45,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('masuk') }}" class="nav-link">
                     <i class="far fa-solid fa-thumbs-up nav-icon"></i>
                   <p>Presensi Masuk</p>
                 </a>
